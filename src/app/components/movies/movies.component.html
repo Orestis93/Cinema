@@ -1,0 +1,40 @@
+<h1 class="center">{{title}}</h1>
+
+<div class="container">
+  <form [formGroup]="form" novalidate> 
+    <input  [formControl]="searchfield" placeholder="Enter Movie name,Category etc" >
+    <br/>
+    <label>Please Select a Category</label>
+    <select  [formControl]="categoryfield">
+      <option *ngFor="let repertoire of repertoire$" [value]="repertoire.categories">
+        {{repertoire.categories}}
+      </option>
+    </select>
+    </form>
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Age Limit</th>
+        <th scope="col">Categories</th>
+        <th scope="col">MovieFormat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let repertoire of repertoire$">  
+          <th scope="row">{{repertoire.id}}</th>
+          <td>  {{repertoire.title}}</td>
+          <td>{{repertoire.duration}}</td>
+          <td>{{repertoire.ageLimit}}</td>
+          <td>{{repertoire.categories}}</td>
+          <td> 
+         
+           </td>
+         </tr>
+    </tbody>
+  </table>
+ <span>{{movieFormat}}</span>
+ <span>{{filtered}}</span>
+</div>
