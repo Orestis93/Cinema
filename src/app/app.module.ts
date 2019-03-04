@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { SearchMoviesService } from './services/search-movies.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MomentModule } from 'ngx-moment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MomentModule
   ],
   providers: [SearchMoviesService],
   bootstrap: [AppComponent]
